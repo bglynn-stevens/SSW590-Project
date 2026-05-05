@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src 'self' https://accounts.spotify.com https://api.spotify.com; img-src 'self' https://i.scdn.co data:; style-src 'self'; script-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; object-src 'none'; upgrade-insecure-requests">
+        <title> TheArts </title>
+        <link rel="stylesheet" href="./style.css">
+    </head>
+    <body>
+        <main class="app-shell">
+            <section class="hero-card">
+                <div class="badge"> TheArts </div>
+                <h1>Check Your Stats!</h1>
+                <p class="subtitle">Find your media compatibility with friends based on music taste, favorite artists, podcasts, books, and movies.</p>
+
+                <div class="setup-card">
+                    <label for="client-id">Spotify Client ID</label>
+                    <input type="password" id="client-id" placeholder="Paste your Spotify app Client ID">
+                    <button id="save-client-id">Save Client ID</button>
+                    <small>Only your public Spotify Client ID is stored locally. No client secret is used!</small>
+                </div>
+
+                <div class="button-row">
+                    <button id="login-button" class="primary-button">Connect Spotify</button>
+                    <button id="logout-button" class="secondary-button hidden">Log Out</button>
+                </div>
+
+                <p id="status-message" class="status-message">Connect Spotify to load your top tracks and artists.</p>
+            </section>
+
+            <section class="dashboard-grid">
+                <article class="panel profile-panel">
+                    <h2>Your Taste Profile</h2>
+                    <div id="profile-summary" class="profile-summary empty-state">No Spotify profile loaded yet!</div>
+                </article>
+
+                <article class="panel score-panel">
+                    <h2>Circle Compatibility</h2>
+                    <div class="score-ring">
+                        <span id="compatibility-score">--</span>
+                        <small>/ 100</small>
+                    </div>
+                    <p id="compatibility-text">Add your manual preferences after connecting Spotify to preview a compatibility score!</p>
+                </article>
+
+                <article class="panel wide-panel">
+                    <div class="panel-heading">
+                        <h2>Top Spotify Tracks</h2>
+                        <span>Live from Spotify</span>
+                    </div>
+                    <div id="top-tracks" class="media-list empty-state">No tracks loaded yet!!</div>
+                </article>
+
+                <article class="panel wide-panel">
+                    <div class="panel-heading">
+                        <h2>Top Spotify Artists</h2>
+                        <span>Live from Spotify</span>
+                    </div>
+                    <div id="top-artists" class="artist-grid empty-state">No artists loaded yet!!</div>
+                </article>
+
+                <article class="panel wide-panel">
+                    <h2>Manual Media Preferences</h2>
+                    <div class="preference-form">
+                        <input id="favorite-books" placeholder="Favorite books, separated by commas">
+                        <input id="favorite-movies" placeholder="Favorite movies, separated by commas">
+                        <input id="favorite-podcasts" placeholder="Favorite podcasts, separated by commas">
+                        <input id="friend-circle" placeholder="Friend circle names, separated by commas">
+                        <button id="save-preferences" class="primary-button">Save Preferences!</button>
+                    </div>
+                    <div id="manual-summary" class="manual-summary"></div>
+                </article>
+            </section>
+        </main>
+
+        <script src="./script.js"></script>
+    </body>
+</html>

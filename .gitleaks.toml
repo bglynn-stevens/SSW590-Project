@@ -1,0 +1,5 @@
+title = "TheArts Gitleaks Configuration"
+
+[allowlist]
+description = "Allow non-secret public Spotify client IDs only when documented as public identifiers."
+paths = []
