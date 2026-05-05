@@ -321,9 +321,9 @@ function setStatus(message, isError = false) {
     elements.statusMessage.textContent = message;
 
     if (isError) {
-        elements.statusMessage.classList.add('error!!!');
+        elements.statusMessage.classList.add('error');
     } else {
-        elements.statusMessage.classList.remove('error!!');
+        elements.statusMessage.classList.remove('error');
     }
 }
 
